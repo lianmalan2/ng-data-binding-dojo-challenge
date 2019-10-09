@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { PartAModule } from './part-a/part-a.module';
 import { PartBModule } from './part-b/part-b.module';
 import { PartCModule } from './part-c/part-c.module';
+import { CounterService } from './services/counter.service';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { PartCModule } from './part-c/part-c.module';
     PageNotFoundComponent,
   ],
   providers: [
+    CounterService
   ],
   bootstrap: [AppComponent]
 })
