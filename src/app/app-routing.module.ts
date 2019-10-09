@@ -8,19 +8,15 @@ import { CountAdjustComponent } from './part-c/count-adjust/count-adjust.compone
 import { CountDisplayComponent } from './part-c/count-display/count-display.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'part-a', component: CounterComponent },
+  { path: 'part-b', component: CountControllerComponent },
   {
-    path: '', children: [
-      { path: '', redirectTo: 'home', pathMatch: 'prefix' },
-      { path: 'home', component: HomeComponent },
-      { path: 'part-a', component: CounterComponent },
-      { path: 'part-b', component: CountControllerComponent },
-      {
-        path: 'part-c', children: [
-          { path: '', redirectTo: 'adjust', pathMatch: 'prefix' },
-          { path: 'adjust', component: CountAdjustComponent },
-          { path: 'display', component: CountDisplayComponent },
-        ]
-      }]
+    path: 'part-c', children: [
+      { path: '', redirectTo: 'adjust', pathMatch: 'prefix' },
+      { path: 'adjust', component: CountAdjustComponent },
+      { path: 'display', component: CountDisplayComponent },
+    ]
   },
   { path: '**', component: PageNotFoundComponent },
 ];

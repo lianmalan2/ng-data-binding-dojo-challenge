@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class CountControllerComponent implements OnInit {
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
+
 }
