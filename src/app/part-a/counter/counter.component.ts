@@ -1,3 +1,5 @@
+import { counterKeys } from 'src/app/models/enums';
+import { CounterService } from 'src/app/services/counter.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class CounterComponent implements OnInit {
+  key: counterKeys = 'partA';
 
-  constructor() { }
+  constructor(
+    protected counterSvc: CounterService
+  ) { }
 
   ngOnInit() {
+    this.counterSvc.addNewCounter(this.key);
   }
-
 }
